@@ -27,7 +27,7 @@ page {
 
 .step-column {
   flex-direction: row;
-  height: 160rpx;
+  min-height: 160rpx;
   padding-left: 30rpx;
   box-sizing: border-box
 }
