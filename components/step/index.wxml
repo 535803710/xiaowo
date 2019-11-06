@@ -1,0 +1,33 @@
+<wxs src="../../../miniprogram_npm/lin-ui/filter/string.wxs" module="string" />
+<view class="step {{'step-'+direction}} l-class" style="{{direction=='row'?'width:'+(1/length)*750+'rpx':''}}">
+	<view class="left">
+		<view class="l-describe-class step-describe {{activeIndex==index+1?'step-describe-on':''}}">
+			{{describe}}
+		</view>
+	</view>
+	<view class="step-icon">
+		<!-- <view wx:if="{{custom}}" class="step-custom">
+      <slot />
+    </view> -->
+		<view class="l-step-class step-icon {{icon?'step-number':'step-'+type}} {{status?'step-number-'+status:''}} {{activeIndex==index+1 && !status?'step-'+type+'-on':''}} {{activeIndex>index+1 && !status?'step-'+type+'-over':''}}">
+			<l-icon
+			 wx:if="{{icon || status}}"
+			 name="{{icon || status}}"
+			 size="{{iconSize}}"
+			 color="{{iconColor}}"
+			/>
+			<block wx:if="{{type=='number' && !icon &&!status}}">{{index+1}}</block>
+			<text style="color:#fff" wx:if="{{index===0 &&string.slice(string.toString(state),0,1) === '1'}}">揽</text>
+			<text style="color:#fff" wx:if="{{index===0 &&string.slice(string.toString(state),0,1) === '2'}}">运</text>
+			<text style="color:#fff" wx:if="{{index===0 &&string.slice(string.toString(state),0,1) === '3'}}">签</text>
+			<text style="color:#fff" wx:if="{{index===0 &&string.slice(string.toString(state),0,1) === '4'}}">问</text>
+		</view>
+	</view>
+	<view class="step-line {{'step-line-'+ direction}} {{'step-line-'+ direction + '-number'}} {{'step-line-'+type}} {{status?'step-line-'+ status:''}} {{activeIndex>index?'step-line-on':''}}" wx:if="{{length !== index+1}}" />
+	<view class="step-content {{'step-content-'+direction}}">
+		<view class="l-title-class step-title {{'step-title-' + direction}} {{status?'step-title-' + status:''}} {{activeIndex==index+1?'step-title-on':''}}">
+			{{title}}
+		</view>
+	</view>
+</view>
+

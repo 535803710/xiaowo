@@ -1,0 +1,14 @@
+<wxs src="../../../miniprogram_npm/lin-ui/filter/string.wxs" module="string"></wxs>
+<view class="l-class container {{'container-'+direction}}">
+    <view class="address">
+        <view class='left'></view>
+        <view class="step-icon {{string.slice(string.toString(state),0,1) === '3'?'step-icon-on':''}}">
+            <text>收</text>
+        </view>
+        <view class="step-line  {{string.slice(string.toString(state),0,1) === '3'? 'step-line-on':''}}"></view>
+        <view class="title">
+            <view>{{address ==='false'? '为保护用户隐私暂不展示收货地址':address}}</view>
+        </view>
+    </view>
+    <slot />
+</view>
