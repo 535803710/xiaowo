@@ -2,13 +2,12 @@
 ### 使用前不需要引用任何组件了
 ## 
 #### wxml示例    EMS.wxml
-|接收参数   | 格式  | 备注|
-| ------------ | ------------ |
-|  address |  object |收货地址|
-|  state | string  |接口返回的 res.data.StateEx|
-|    Traces  |接口返回的参数 res.data.Traces |.reverse()倒序 数组要倒序|
-| title| item.AcceptStation|如果是接口返回的数据直接赋值不用变|
-|describe|item.AcceptTime}|如果是接口返回的数据直接赋值不用变|
+#### 接收参数   | 格式        | 备注|
+##### address   |  object     |收货地址|
+##### state     | string  |接口返回的 res.data.StateEx|
+##### Traces    |接口返回的参数 res.data.Traces |.reverse()倒序 数组要倒序|
+##### title     | item.AcceptStation|如果是接口返回的数据直接赋值不用变|
+##### describe  |item.AcceptTime}|如果是接口返回的数据直接赋值不用变|
 没写到的不用变
 
     <j-steps type='dot' direction='column' address="{{options.address}}" state="{{StateEx}}">
